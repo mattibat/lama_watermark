@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Lama Studios</title>
+    <style>
+        #logo-container {
+            display: none;
+        }
+        .png {
+            position: fixed;
+            top: 45px;
+            right: 45px;
+            width: 2vw;
+            max-width: 100px;
+            min-width: 10px;
+            border-radius: 5px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="logo-container">
+        <img src="img/logo.png" class="png">
+    </div>
+
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data.action === 'show') {
+                document.getElementById('logo-container').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
